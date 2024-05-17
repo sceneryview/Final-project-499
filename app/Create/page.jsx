@@ -1,8 +1,17 @@
 'use client'
 import React from "react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-async function Createversion({main,text,link,avatar}) {
+
+export default function Page() {
+  const router = useRouter()
+  const [main, setMain] = useState('');
+  const [text, setText] = useState('');
+  const [link, setLink] = useState('');
+  const [avatar, setAvatar] = useState('');
+
+  async function Createversion({main,text,link,avatar}) {
   try {
     const response = await fetch('https://back-end-499.vercel.app/api/create', {
       method: 'POST',
@@ -19,23 +28,14 @@ async function Createversion({main,text,link,avatar}) {
 
     const data = await response.json();
 
-    if (data.message === "Add Model successfully") {
-      window.location = '/Adminpage';
-    } else {
-      throw new Error('Login failed');
-    }
+     router.push("/Adminpage")
   } catch (error) {
     console.error('Login error:', error.message);
     alert('Login failed');
     window.location = '/Create';
   }
 }
-export default function Page() {
-  const [main, setMain] = useState('');
-  const [text, setText] = useState('');
-  const [link, setLink] = useState('');
-  const [avatar, setAvatar] = useState('');
-
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
