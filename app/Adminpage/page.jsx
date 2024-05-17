@@ -9,7 +9,7 @@ export default function Page() {
   const [link, setLink] = useState("");
   const [avatar, setAvatar] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/api/allversion")
+    fetch("https://back-end-499.vercel.app/allversion")
       .then((response) => response.json())
       .then((data) => {
         setVersion(data);
@@ -20,7 +20,7 @@ export default function Page() {
   }, []);
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/version/${id}`, {
+      const response = await fetch(`https://back-end-499.vercel.app/version/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
