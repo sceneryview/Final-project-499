@@ -53,10 +53,10 @@ export default function Page() {
             <div className="text-space">
               <div className="text-position">
                 <div className="main-text">
-                  <span>Pure energy and progressive performance</span>
+                  <span>CRUD อยู่ด้านล่างค่ะ</span>
                 </div>
                 <div className="small-text">
-                  <span> Audi RS e-tron GT. </span>
+                  <span> 6400833 รัตนากรณ์ การุณ  </span>
                 </div>
                 <div className="button-discover">
                   <a href="/AudiRS">Discover now</a>
