@@ -19,11 +19,7 @@ export default function Footer() {
         <a href="#" className="upds">
           <span>Back to top</span>
           <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M7 10l5.5 5.5L18 10"
-              fill="none"
-              stroke="currentColor"
-            ></path>
+            <path d="M7 10l5.5 5.5L18 10" fill="none" stroke="currentColor"></path>
           </svg>
         </a>
       </div>
@@ -102,14 +98,14 @@ export default function Footer() {
                   <a href="#">Request a test drive</a>
                 </li>
                 <li>
-                  <a href="#">Contact &Service</a>
+                  <a href="#">Contact & Service</a>
                 </li>
               </ul>
             </div>
           </div>
         </ul>
       </div>
-      {/* ????????????????????? ????????????????????? */}
+      {/* ปุ่ม Scroll */}
       <div className="flex flex-col h-[400px]">
         <div className="scorrl">
           <button
@@ -200,7 +196,7 @@ export default function Footer() {
           )}
         </div>
       </div>
-      <div className="social-media ">
+      <div className="social-media">
         <div className="icon">
           <Link
             href="//www.facebook.com/AudiThailand/"
