@@ -50,7 +50,7 @@ const getById = async (id) => {
   
 
 
-export default function page({params}) {
+export default function Page({params}) {
   const {id} = params
   const [main, setMain] = useState('');
   const [text, setText] = useState('');
