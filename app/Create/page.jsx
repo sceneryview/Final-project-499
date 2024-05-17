@@ -4,7 +4,7 @@ import { useState } from "react";
 
 async function Createversion({main,text,link,avatar}) {
   try {
-    const response = await fetch('http://localhost:3333/create', {
+    const response = await fetch('http://localhost:5000/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
