@@ -19,7 +19,7 @@ async function Createversion({main,text,link,avatar}) {
 
     const data = await response.json();
 
-    if (data.status === 'Add Model successfully') {
+    if (data.status === "Add Model successfully") {
       window.location = '/Adminpage';
     } else {
       throw new Error('Login failed');
