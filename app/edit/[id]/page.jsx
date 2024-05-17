@@ -4,7 +4,7 @@ import { useState,useEffect} from "react";
 
 async function Createversion({id,main,text,link,avatar}) {
   try {
-    const response = await fetch(`http://localhost:3333/edit/${id}`, {
+    const response = await fetch(`http://localhost:5000/update/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
