@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import { useState} from "react";
+import { useState } from "react";
 
 async function Createversion({main,text,link,avatar}) {
   try {
@@ -30,7 +30,7 @@ async function Createversion({main,text,link,avatar}) {
     window.location = './Create';
   }
 }
-export default function page() {
+export default function Page() {
   const [main, setMain] = useState('');
   const [text, setText] = useState('');
   const [link, setLink] = useState('');
