@@ -4,7 +4,7 @@ import { useState } from "react";
 
 async function Createversion({main,text,link,avatar}) {
   try {
-    const response = await fetch('https://back-end-499.vercel.app/create', {
+    const response = await fetch('https://back-end-499.vercel.app/api/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
