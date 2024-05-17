@@ -126,7 +126,7 @@ export default function Footer() {
           {inSite && (
             <div className=" relative bg-[#1a1a1a] top-10 text-white w-full h-full">
               {list.map((item) => (
-                <div className="cursor-pointer w-full py-2 pl-[28px] flex">
+                <div key={item.id} className="cursor-pointer w-full py-2 pl-[28px] flex">
                   <h3>{item.model}</h3>
                 </div>
               ))}
@@ -148,7 +148,7 @@ export default function Footer() {
           {inAite && (
             <div className=" relative bg-[#1a1a1a] top-10 text-white w-full">
               {list.map((item) => (
-                <div className="cursor-pointer w-full py-2 pl-[28px] top-4">
+                <div key={item.id} className="cursor-pointer w-full py-2 pl-[28px] top-4">
                   <h3>{item.acc}</h3>
                 </div>
               ))}
@@ -170,7 +170,7 @@ export default function Footer() {
           {inBite && (
             <div className=" relative bg-[#1a1a1a] top-20 text-white w-full">
               {list.map((item) => (
-                <div className="cursor-pointer w-full py-2 pl-[28px] flex flex-col">
+                <div key={item.id} className="cursor-pointer w-full py-2 pl-[28px] flex flex-col">
                   <h3>{item.inno}</h3>
                 </div>
               ))}
@@ -192,7 +192,7 @@ export default function Footer() {
           {inCite && (
             <div className=" relative bg-[#1a1a1a] top-[120px] text-white w-full">
               {list.map((item) => (
-                <div className="cursor-pointer w-full py-2 pl-[28px]">
+                <div key={item.id} className="cursor-pointer w-full py-2 pl-[28px]">
                   <h3>{item.sup}</h3>
                 </div>
               ))}
