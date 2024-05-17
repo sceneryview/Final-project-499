@@ -27,7 +27,7 @@ async function Createversion({main,text,link,avatar}) {
   } catch (error) {
     console.error('Login error:', error.message);
     alert('Login failed');
-    window.location = './Create';
+    window.location = '/Create';
   }
 }
 export default function Page() {
