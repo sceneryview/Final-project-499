@@ -27,7 +27,7 @@ export default function Page() {
     }
 
     const data = await response.json();
-
+     alert('add success');
      router.push("/Adminpage")
   } catch (error) {
     console.error('Login error:', error.message);
