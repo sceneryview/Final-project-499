@@ -30,7 +30,7 @@ export default function Page() {
       alert(result.status);
       if (result.message === "Model Delete successfully") {
         // กรองข้อมูลที่ถูกลบออกจาก state
-        setVersion(version.filter((version) => version.id !== id));
+        setVersion(version.filter((version) => version.id !== _id));
       }
     } catch (error) {
       console.error("There was an error deleting the data!", error);
@@ -76,7 +76,7 @@ export default function Page() {
             </div>
             <div className="block mt-[260px] mx-[12%]">
               {version.map((version) => (
-                <div key={version.id}>
+                <div key={version._id}>
                   <div className="my-[100px]">
                   <div className="flex my-[260px]mr-[12%] ">
                     <div className="koCGRD-image">
@@ -96,10 +96,10 @@ export default function Page() {
                       </div>
                       <div className="flex justify-end space-x-5 mr-1 pb-8 text-base mb-0">
                         <div className=" flex z-10 bg-black text-white w-16 h-8 items-center justify-center">
-                          <a href={`/edit/${version.id}`}>Edit</a>
+                          <a href={`/edit/${version._id}`}>Edit</a>
                         </div>
                         <button
-                          onClick={() => handleDelete(version.id)}
+                          onClick={() => handleDelete(version._id)}
                           className=" flex z-10 bg-black text-white w-20 items-center justify-center"
                         >
                           Delete
