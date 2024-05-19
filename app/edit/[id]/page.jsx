@@ -2,9 +2,9 @@
 import React from "react";
 import { useState,useEffect} from "react";
 
-async function Createversion({id,main,text,link,avatar}) {
+async function Createversion({_id,main,text,link,avatar}) {
   try {
-    const response = await fetch(`http://localhost:5000/update/${id}`, {
+    const response = await fetch(`https://back-end-499.vercel.app/api/update/${_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -19,15 +19,15 @@ async function Createversion({id,main,text,link,avatar}) {
 
     const data = await response.json();
 
-    if (data.status === 'edit success') {
+    if (data.status === 'Model updated successfully') {
       window.location = '/Adminpage';
-      alert('edit success');
+      alert('Model updated successfully');
     } else {
-      throw new Error('Login failed');
+      throw new Error('Failed to update model');
     }
   } catch (error) {
     console.error('Login error:', error.message);
-    alert('Login failed');
+    alert('Failed to update model');
     window.history.back();
   }
 }
@@ -35,11 +35,11 @@ async function Createversion({id,main,text,link,avatar}) {
 
 const getById = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3333/edit/${id}`, {
+      const res = await fetch(`https://back-end-499.vercel.app/api/update/${_id}`, {
         cache: "no-store",
       });
       if (!res.ok) {
-        throw new Error("Failed to fetch product");
+        throw new Error("Failed to fetch Model");
       }
       return res.json();
     } catch (error) {
@@ -80,7 +80,7 @@ export default function Page({params}) {
     event.preventDefault();
     try {
       await Createversion({
-        id,
+        _id,
         main,
         text,
         link,
@@ -88,7 +88,7 @@ export default function Page({params}) {
       });
     } catch (error) {
       console.error('Login error:', error.message);
-      alert('Login failedddddd');
+      alert('Update failedddddd');
     }
   };
   return (
