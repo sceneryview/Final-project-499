@@ -80,7 +80,7 @@ export default function Page({params}) {
     event.preventDefault();
     try {
       await Createversion({
-        _id,
+        id,
         main,
         text,
         link,
