@@ -30,7 +30,7 @@ export default function Page() {
       alert(result.status);
       if (result.message === "Model Delete successfully") {
         // กรองข้อมูลที่ถูกลบออกจาก state
-        setVersion(version.filter((version) => version._id !== _id));
+        setVersion(version.filter((version) => version._id !== id));
       }
     } catch (error) {
       console.error("There was an error deleting the data!", error);
