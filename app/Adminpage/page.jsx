@@ -18,7 +18,7 @@ export default function Page() {
         console.log(error);
       });
   }, []);
-  const handleDelete = async (id) => {
+  const handleDelete = async (_id) => {
     try {
       const response = await fetch(`https://back-end-499-sceneryviews-projects.vercel.app/api/version/${_id}`, {
         method: "DELETE",
@@ -30,7 +30,7 @@ export default function Page() {
       alert(result.status);
       if (result.message === "Model Delete successfully") {
         // กรองข้อมูลที่ถูกลบออกจาก state
-        setVersion(version.filter((version) => version._id !== id));
+        setVersion(version.filter((version) => version._id !== _id));
       }
     } catch (error) {
       console.error("There was an error deleting the data!", error);
@@ -100,7 +100,7 @@ export default function Page() {
                         </div>
                         <button
                           onClick={() => handleDelete(version._id)}
-                          className=" flex z-10 bg-black text-white w-20 items-center justify-center"
+                          className="flex z-10 bg-black text-white w-20 items-center justify-center"
                         >
                           Delete
                         </button>
