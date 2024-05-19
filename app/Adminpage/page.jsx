@@ -20,7 +20,7 @@ export default function Page() {
   }, []);
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://back-end-499.vercel.app/api/version/${id}`, {
+      const response = await fetch(`https://back-end-499.vercel.app/api/version/${_id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
