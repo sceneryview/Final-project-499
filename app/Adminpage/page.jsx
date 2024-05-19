@@ -20,7 +20,7 @@ export default function Page() {
   }, []);
   const handleDelete = async (_id) => {
     try {
-      const response = await fetch(`https://back-end-499-sceneryviews-projects.vercel.app/api/version/${_id}`, {
+      const response = await fetch(`https://back-end-499.vercel.app/api/version/${_id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export default function Page() {
 
     if (result.message === "Model deleted successfully") {
       // กรองข้อมูลที่ถูกลบออกจาก state
-      setVersion((prevVersions) => prevVersions.filter((version) => version._id !== _id));
+      setVersion((prevVersion) => prevVersion.filter((version) => version._id !== _id));
     }
   } catch (error) {
     console.error("There was an error deleting the data!", error);
