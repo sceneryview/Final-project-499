@@ -26,17 +26,22 @@ export default function Page() {
           "Content-Type": "application/json",
         },
       });
-      const result = await response.json();
-      alert(result.status);
-      if (result.message === "Model Delete successfully") {
-        // กรองข้อมูลที่ถูกลบออกจาก state
-        setVersion(version.filter((version) => version._id !== _id));
-      }
-    } catch (error) {
-      console.error("There was an error deleting the data!", error);
-      alert("Failed to delete data");
+         if (!response.ok) {
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
-  };
+
+    const result = await response.json();
+    alert(result.message);
+
+    if (result.message === "Model deleted successfully") {
+      // กรองข้อมูลที่ถูกลบออกจาก state
+      setVersion((prevVersions) => prevVersions.filter((version) => version._id !== _id));
+    }
+  } catch (error) {
+    console.error("There was an error deleting the data!", error);
+    alert("Failed to delete data");
+  }
+};
   return (
     <div className="home">
       <div className="audi-large-picturebackgroud">
