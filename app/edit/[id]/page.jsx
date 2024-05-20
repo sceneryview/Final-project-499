@@ -22,8 +22,6 @@ async function Createversion({id,main,text,link,avatar}) {
        alert('Model updated successfully');
       window.location = '/Adminpage';
      
-    } else {
-      throw new Error('Failed to update model');
     }
   } catch (error) {
     console.error('Update error:', error.message);
