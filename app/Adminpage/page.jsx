@@ -35,13 +35,13 @@ export default function Page() {
          if (!response.ok) {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
- getData();
+
     const result = await response.json();
     alert(result.message);
 
-    if (result.message === "Model deleted successfully") {
+    if (result.message === "Model Delete successfully") {
       // กรองข้อมูลที่ถูกลบออกจาก state
-       
+        getData();
       setVersion((prevVersion) => prevVersion.filter((version) => version._id !== _id));
     }
   } catch (error) {
