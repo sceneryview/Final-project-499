@@ -24,7 +24,7 @@ export default function Page() {
       });
    }
    getData();
-  }, []);
+  }, [version]);
   const handleDelete = async (_id) => {
     try {
       const response = await fetch(`https://back-end-499-git-main-sceneryviews-projects.vercel.app/api/version/${_id}`, {
