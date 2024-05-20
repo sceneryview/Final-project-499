@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+   const router = useRouter();
   const [version, setVersion] = useState([]);
   const [main, setMain] = useState("");
   const [text, setText] = useState("");
@@ -12,6 +13,7 @@ export default function Page() {
     fetch("https://back-end-499-git-main-sceneryviews-projects.vercel.app/api/allversion")
       .then((response) => response.json())
       .then((data) => {
+          router.refresh();
         setVersion(data);
       })
       .catch((error) => {
