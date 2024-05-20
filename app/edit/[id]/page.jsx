@@ -12,23 +12,22 @@ async function Createversion({id,main,text,link,avatar}) {
       body: JSON.stringify({main,text,link,avatar}),
       
     });
-    console.log({main,text,link,avatar})
     if (!response.ok) {
-      throw new Error('Login failed');
+      throw new Error('Update failed');
     }
 
     const data = await response.json();
 
-    if (data.status === 'Model updated successfully') {
+    if (data.status == 'Model updated successfully') {
+       alert('Model updated successfully');
       window.location = '/Adminpage';
-      alert('Model updated successfully');
+     
     } else {
       throw new Error('Failed to update model');
     }
   } catch (error) {
     console.error('Login error:', error.message);
     alert('Failed to update model');
-    window.history.back();
   }
 }
 
