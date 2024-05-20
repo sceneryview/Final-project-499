@@ -13,7 +13,7 @@ export default function Page() {
    
   useEffect(() => {
      const getData = async (req,res) => {
-       fetch("https://back-end-499.vercel.app/api/allversion")
+       fetch("https://back-end-499-git-main-sceneryviews-projects.vercel.app/api/allversion")
       .then((response) => response.json())
       .then((data) => {
           router.refresh();
@@ -27,7 +27,7 @@ export default function Page() {
   }, []);
   const handleDelete = async (_id) => {
     try {
-      const response = await fetch(`https://back-end-499.vercel.app/api/version/${_id}`, {
+      const response = await fetch(`https://back-end-499-git-main-sceneryviews-projects.vercel.app/api/version/${_id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
