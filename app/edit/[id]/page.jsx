@@ -4,7 +4,7 @@ import { useState,useEffect} from "react";
 
 async function Createversion({id,main,text,link,avatar}) {
   try {
-    const response = await fetch(`https://back-end-499-git-main-sceneryviews-projects.vercel.app/update/${id}`, {
+    const response = await fetch(`https://back-end-499.vercel.app/api/update/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
