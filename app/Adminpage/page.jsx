@@ -9,7 +9,7 @@ export default function Page() {
   const [link, setLink] = useState("");
   const [avatar, setAvatar] = useState("");
   useEffect(() => {
-    fetch("https://back-end-499.vercel.app/api/allversion")
+    fetch("https://back-end-499-git-main-sceneryviews-projects.vercel.app/api/allversion")
       .then((response) => response.json())
       .then((data) => {
         setVersion(data);
