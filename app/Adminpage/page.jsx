@@ -9,8 +9,9 @@ export default function Page() {
   const [text, setText] = useState("");
   const [link, setLink] = useState("");
   const [avatar, setAvatar] = useState("");
-  useEffect(() => {
-    fetch("https://back-end-499-git-main-sceneryviews-projects.vercel.app/api/allversion")
+
+   const getData = async (req,res) => {
+       fetch("https://back-end-499-git-main-sceneryviews-projects.vercel.app/api/allversion")
       .then((response) => response.json())
       .then((data) => {
           router.refresh();
@@ -19,6 +20,9 @@ export default function Page() {
       .catch((error) => {
         console.log(error);
       });
+   }
+  useEffect(() => {
+   getData();
   }, []);
   const handleDelete = async (_id) => {
     try {
@@ -31,12 +35,13 @@ export default function Page() {
          if (!response.ok) {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
-
+ getData();
     const result = await response.json();
     alert(result.message);
 
     if (result.message === "Model deleted successfully") {
       // กรองข้อมูลที่ถูกลบออกจาก state
+       
       setVersion((prevVersion) => prevVersion.filter((version) => version._id !== _id));
     }
   } catch (error) {
