@@ -35,7 +35,7 @@ async function Createversion({id,main,text,link,avatar}) {
 
 const getById = async (id) => {
     try {
-      const res = await fetch(`https://back-end-499-git-main-sceneryviews-projects.vercel.app/api/update/${id}`, {
+      const res = await fetch(`https://back-end-499.vercel.app/api/update/${id}`, {
         cache: "no-store",
       });
       if (!res.ok) {
