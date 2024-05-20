@@ -10,7 +10,9 @@ export default function Page() {
   const [link, setLink] = useState("");
   const [avatar, setAvatar] = useState("");
 
-   const getData = async (req,res) => {
+   
+  useEffect(() => {
+     const getData = async (req,res) => {
        fetch("https://back-end-499.vercel.app/api/allversion")
       .then((response) => response.json())
       .then((data) => {
@@ -21,7 +23,6 @@ export default function Page() {
         console.log(error);
       });
    }
-  useEffect(() => {
    getData();
   }, []);
   const handleDelete = async (_id) => {
@@ -41,7 +42,7 @@ export default function Page() {
 
     if (result.message === "Model Delete successfully") {
       // กรองข้อมูลที่ถูกลบออกจาก state
-        getData();
+  
       setVersion((prevVersion) => prevVersion.filter((version) => version._id !== _id));
     }
   } catch (error) {
