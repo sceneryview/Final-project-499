@@ -26,7 +26,7 @@ async function Createversion({id,main,text,link,avatar}) {
       throw new Error('Failed to update model');
     }
   } catch (error) {
-    console.error('Login error:', error.message);
+    console.error('Update error:', error.message);
     alert('Failed to update model');
   }
 }
