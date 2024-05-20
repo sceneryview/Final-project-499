@@ -18,7 +18,7 @@ async function Createversion({id,main,text,link,avatar}) {
 
     const data = await response.json();
 
-    if (data.status == 'Model updated successfully') {
+    if (data.message == 'Model updated successfully') {
        alert('Model updated successfully');
       window.location = '/Adminpage';
      
