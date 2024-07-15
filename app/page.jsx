@@ -8,7 +8,7 @@ export default function Home() {
   const [link, setLink] = useState("");
   const [avatar, setAvatar] = useState("");
   useEffect(() => {
-    fetch("http://localhost:3333/allversions")
+    fetch("https://back-end-499-git-main-sceneryviews-projects.vercel.app/api/allversion")
       .then((response) => response.json())
       .then((data) => {
         setVersion(data);
